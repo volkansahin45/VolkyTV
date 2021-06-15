@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">VolkyTV</string>
+    <string name="item_is_not_available">Item is not available</string>
+    <string name="there_is_an_error">There is an error</string>
+    <string name="refresh">Refresh</string>
+    <string name="popular_now">Popular Now</string>
+    <string name="for_you">For You</string>
+    <string name="explore">Explore</string>
+</resources>

@@ -1,0 +1,94 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        applicationId "com.vsahin.volkytv"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+        useIR = true
+    }
+    buildFeatures {
+        compose true
+    }
+    buildToolsVersion '30.0.2'
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.5.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    def compose_version = "1.0.0-beta08"
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation "androidx.compose.material:material:$compose_version"
+    implementation "androidx.compose.runtime:runtime:$compose_version"
+    implementation "androidx.compose.material:material-icons-extended:$compose_version"
+
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+
+    def hilt_navigation_compose = "1.0.0-alpha02"
+    implementation "androidx.hilt:hilt-navigation-compose:$hilt_navigation_compose"
+
+    def ui_tooling = "1.0.0-beta08"
+    implementation "androidx.compose.ui:ui-tooling:$ui_tooling"
+
+    def activity_version = '1.3.0-beta01'
+    implementation "androidx.activity:activity-ktx:$activity_version"
+
+    def compose_activity = '1.3.0-beta01'
+    implementation "androidx.activity:activity-compose:$compose_activity"
+
+    def compose_viewmodel = "1.0.0-alpha06"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$compose_viewmodel"
+
+    def compose_navigation = "2.4.0-alpha02"
+    implementation "androidx.navigation:navigation-compose:$compose_navigation"
+
+    def ktx = "2.3.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$ktx"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$ktx"
+
+    def retrofit = "2.9.0"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+
+    def gson_adapter = '2.9.0'
+    implementation "com.squareup.retrofit2:converter-gson:$gson_adapter"
+
+    def accompanist = '0.11.1'
+    implementation "com.google.accompanist:accompanist-coil:$accompanist"
+    implementation "com.google.accompanist:accompanist-pager:$accompanist"
+    implementation "com.google.accompanist:accompanist-pager-indicators:$accompanist"
+    implementation "com.google.accompanist:accompanist-swiperefresh:$accompanist"
+
+    def exoplayer = "2.14.0"
+    implementation "com.google.android.exoplayer:exoplayer:$exoplayer"
+    implementation "com.google.android.exoplayer:exoplayer-core:$exoplayer"
+}
