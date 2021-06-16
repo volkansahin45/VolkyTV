@@ -25,7 +25,7 @@ import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import com.vsahin.volkytv.data.model.Category
 import com.vsahin.volkytv.data.model.Entry
-import com.vsahin.volkytv.ui.common.toReadableDate
+import com.vsahin.volkytv.ui.common.toReadableTime
 import com.vsahin.volkytv.ui.common.view.Credits
 import com.vsahin.volkytv.ui.common.view.ErrorView
 import kotlinx.coroutines.launch
@@ -89,7 +89,7 @@ private fun DetailContent(
         entry?.let {
             val yearDateFormat = SimpleDateFormat("yyyy", Locale.getDefault())
             val publishedYear = yearDateFormat.format(Date(entry.publishedDate))
-            val duration = entry.contents[0].duration.toReadableDate()
+            val duration = entry.contents[0].duration.toReadableTime()
             val pegi = entry.parentalRatings[0].rating
             val metadata = "$publishedYear | $pegi | $duration"
 
