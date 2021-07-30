@@ -82,4 +82,6 @@ dependencies {
 
     implementation "com.google.android.exoplayer:exoplayer:$exoplayer"
     implementation "com.google.android.exoplayer:exoplayer-core:$exoplayer"
+
+    implementation "io.coil-kt:coil-compose:$coil_compose"
 }

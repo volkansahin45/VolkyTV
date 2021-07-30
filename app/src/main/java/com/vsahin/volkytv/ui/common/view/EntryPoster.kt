@@ -12,7 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
-import com.google.accompanist.coil.rememberCoilPainter
+import coil.compose.rememberImagePainter
 import com.vsahin.volkytv.data.model.Entry
 
 @Composable
@@ -35,9 +35,8 @@ fun EntryPoster(
                 modifier = Modifier
                     .weight(1f)
                     .fillMaxWidth(),
-                painter = rememberCoilPainter(
-                    request = entry.images[0].url,
-                    fadeIn = true
+                painter = rememberImagePainter(
+                    data = entry.images[0].url,
                 ),
                 contentScale = contentScale,
                 contentDescription = "My content description",

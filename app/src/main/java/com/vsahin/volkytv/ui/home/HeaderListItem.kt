@@ -16,7 +16,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
-import com.google.accompanist.coil.rememberCoilPainter
+import coil.compose.rememberImagePainter
 import com.vsahin.volkytv.data.model.Entry
 
 @Composable
@@ -42,8 +42,8 @@ fun HeaderListItem(
                 modifier = Modifier
                     .fillMaxHeight()
                     .fillMaxWidth(),
-                painter = rememberCoilPainter(
-                    request = entry.images[0].url,
+                painter = rememberImagePainter(
+                    data = entry.images[0].url,
                 ),
                 contentDescription = "My content description",
                 contentScale = ContentScale.Crop
